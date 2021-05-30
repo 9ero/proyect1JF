@@ -1,0 +1,135 @@
+@import 'vars';
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+*{
+    font-family: 'Varela Round', sans-serif;
+    -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+.s-top{
+    width: 100%;
+    background-color: $black;
+    
+    
+    }
+.header_container{
+    width: 100%;
+    position: fixed;
+    height: auto;
+}
+    
+.lupa_btn{
+    background-color:$white-copy; 
+    
+    &:hover{
+        background-color: $primary;
+        color: $white-copy;
+    }
+}
+.lupa{
+    padding: 0.5px;
+}
+
+
+
+
+
+.s-outstanding{
+    
+    margin-left: 20vw;
+    background-color: $white-copy;
+    
+}
+#destacado{
+    font-weight: 800;
+    font-size: 30px;
+}
+
+.ostd-card{
+
+    position: static;
+    border: 1px solid $aux;
+}
+.d_basic{
+    h4{
+    font-weight: 800;
+    }
+}
+.data_basic{
+    h4{
+        font-size: 18px;
+    font-weight: 700;
+    }
+}
+
+.flecha_I{
+    width: 5em;
+    
+}
+.flecha_D{
+    width: 5em;
+
+}
+
+.filter_container{
+    background-color: $black;
+    border-radius: 5px;
+    color:$white-copy;
+    width: 15vw;
+
+}
+
+.s-main{
+    border-top: $black solid 1px;
+}
+
+.container_casilla{
+    
+    input:checked{
+        
+        background-color: $aux;
+        
+    }
+    input:hover{
+        background-color: $primary;
+    }
+       
+}
+
+.b_details{
+    background-color: $aux3;
+    color: $white-copy;
+    border: solid black 1px;
+    border-radius: 5%;
+    &:hover{
+        background-color: $white-copy;
+        border: solid $aux3 1px;
+        color: $aux3;
+        
+    }
+    
+    
+}
+  
+.f_container{
+    border-radius: 5px;
+    border: solid 1px $white-copy;
+}
+.card_container{
+    padding-left: 10px;
+}
+
+.footer_container{
+    background-color: $black;
+    color: $white-copy;
+}
+
+
+

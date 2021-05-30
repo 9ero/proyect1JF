@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookEvent</title>
+    <link rel="icon" href="./img/icon/icon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Import Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+
+</head>
+<body>
+<div id="app" class="container-fluid">
+    <header class="header_container">
+        <div class="row justify-content-center pt-4 pb-3 s-top">
+            <div class="col-8 ">
+                <div class="row justify-content-between">
+                    <div class="col-sm-5">
+                        <div class="row">
+                            <div class="col-5 pt-2">
+                            <a href="index.html"> <img class="img-" src="./img/icon/logo.svg" alt="BookEvent"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="row justify-content-center pt-3 ">
+                            <div class="col">
+                                <input class="form-control" f type="text" placeholder="Buscar">
+                            </div>
+                            <div class="col ">
+                                <button class="btn lupa_btn"> 
+                                    <img class="lupa" src="./img/icon/lupa.svg" alt="Buscar" height="20">
+                                </button>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                
+            
+           
+        
+    </header>
+    <section class=" row s-outstanding pt-5 pb-5 justify-content-start ">
+       <div class="col-sm-8 pt-5">
+        <div class="row justify-content-around pt-5 m-0">
+            <h3 class="text-center mb-3" id="destacado">Destacados</h3>
+            <div class="col-1 d-flex align-items-center flecha_I">
+                <img class="img-fluid pr-2" src="./img/icon/flechaI.svg" alt="back" >
+            </div>
+            <div class="col-sm-9 card ostd-card">
+                <div class="row justify-content-start">
+                    <div class="col-sm-8 card-header">
+                        <img class="card-img img-fluid h-100"  v-bind:src="events[0].image" v-bind:alt="events[0].title">
+                    </div>
+                    <div class="col-sm-4 pt-3 card-body d_basic">
+                        <h4 class="pb-3 text-center ">{{ events[0].title }}</h4>
+                        <h5 class="pb-3">Lugar: {{ events[0].location }}</h5>
+                        <h5 class="pb-3">Fecha: {{ events[0].date }}</h5>
+                        <h5 class="pb-3">Categoria: {{ events[0].category }}</h5>
+                        
+                        <div class="row  justify-content-center">
+                            <div class="col-auto card-pb-2">
+                                <button class="btn-primary align-self-center b_details ">Detalles</button> 
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 d-flex align-items-center flecha_D">
+                <img class="img-fluid " src="./img/icon/flechaD.svg" alt="back">
+            </div>
+        </div>
+    </div> 
+       
+    </section>
+    <section class="s-main">
+        <div class="row justify-content-center">
+            <div class="col-2 p-2 mt-2 mr p-3  filter_container ">
+               <p>Filtros:</p>
+
+               <div class="row-cols-auto">
+                <div class="col container pt-2 pb-2 mb-3 mb-3 f_container">
+                    <p>Categoría</p>
+                    <div class="form-check container_casilla">
+                        <input type="checkbox" class="form-check-input" id="MCheck">
+                        <label class="form-check-label slash" for="MCheck">Música</label>
+                    </div>
+                    <div class="form-check container_casilla">
+                        <input type="checkbox" class="form-check-input" id="TCheck">
+                        <label class="form-check-label slash" for="TCheck">Teatro</label>
+                    </div>
+                    <div class="form-check container_casilla">
+                        <input type="checkbox" class="form-check-input" id="CCheck">
+                        <label class="form-check-label slash" for="CCheck">Conferencia</label>
+                    </div>
+                
+                </div>
+                    <div class="col container pt-2 pb-2 mb-3 f_container">
+                        <p>Zona</p>
+                        <div class="form-check container_casilla">
+                            <input type="checkbox" class="form-check-input" id="ACheck">
+                            <label class="form-check-label slash" for="ACheck">Alajuela</label>
+                        </div>
+                        <div class="form-check container_casilla">
+                            <input type="checkbox" class="form-check-input" id="SJCheck">
+                            <label class="form-check-label slash" for="SJCheck">San josé</label>
+                        </div>
+                        <div class="form-check container_casilla">
+                            <input type="checkbox" class="form-check-input" id="Resto_Check">
+                            <label class="form-check-label slash" for="Resto_Check">Resto del país</label>
+                        </div>
+                    </div>
+                    
+                    <div class="col pt-2 pb-2 mb-3 container f_container">
+                        <p>Apto para público</p>
+                        <div class="form-check container_casilla">
+                            <input type="checkbox" class="form-check-input" id="SCheck">
+                            <label class="form-check-label slash" for="SCheck">Sí</label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-6 pt-4">
+                <h3 class="text-center pb-4">Todos los eventos</h3>
+                <div class="row card_container justify-content-start card_container">
+                    
+                        <div v-for="(event, index) in events" class="col-sm-5 card m-3 ostd-card ">
+                            <div class="row justify-content-start">
+                                <div class=" card-header">
+                                    <img class="card-img img-fluid " v-bind:src="event.image" v-bind:alt="">
+                                </div>
+                                <div class="p-4 card-body data_basic">
+                                    <h4 class="card-title  text-center">{{ event.title }}</h4>
+                                    <p class="card-text">Lugar: {{ event.location }}</p>
+                                    <p class="card-text">Fecha: {{ event.date }} </p>
+                                    <p class="card-text">Categoría: {{ event.category }} </p>
+                                    <div class="row justify-content-center">
+                                        <div class="col-3 pb-2">
+                                            <button class="btn-primary align-self-center b_details ">Detalles</button> 
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                       
+                </div>
+                
+
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <div class="row justify-content-sm-center footer_container pt-5 pb-5 mt-2">
+            <div class="col-8">
+                <div class="row justify-content-sm-evenly">
+                    <div class="col-auto">
+                        <p>Contacto</p>
+                    </div>
+                    <div class="col-auto">
+                        <p>Teléfono: </p>
+                    </div>
+                    <div class="col-auto">
+                        <p>Email: </p>
+                    </div>
+                    <div class="col-auto">
+                        <p>Facebook</p>
+                    </div>
+                    <div class="col-auto">
+                        <p>Instagram</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        
+    </footer>
+
+</div>
+
+</body>
+<script src="./js/main.js"></script>
+<script>
+    const mountedApp = app.mount("#app");
+</script>
+</html>
