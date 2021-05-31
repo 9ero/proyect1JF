@@ -29,7 +29,7 @@
                     <div class="col-sm-4">
                         <div class="row justify-content-center pt-3 ">
                             <div class="col-auto">
-                                <input class="form-control" f type="text" placeholder="Buscar">
+                                <input class="form-control" type="text" placeholder="Buscar">
                             </div>
                             <div class="col-auto">
                                 <button class="btn lupa_btn"> 
