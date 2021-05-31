@@ -1,4 +1,5 @@
 @import 'vars';
+@import 'media-queries';
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 *{
@@ -14,15 +15,18 @@ body{
     margin: 0;
 }
 .s-top{
-    width: 100%;
+  
     background-color: $black;
     
-    
     }
-.header_container{
-    width: 100%;
-    position: fixed;
-    height: auto;
+.c_top{
+    background-color: $black;
+}
+
+.header_containers{
+    width: 50%;
+   
+    height: auto; 
 }
     
 .lupa_btn{
@@ -129,6 +133,19 @@ body{
 .footer_container{
     background-color: $black;
     color: $white-copy;
+    @include respond-to($phone){
+       position: relative;
+    }    
+
+}
+
+//accordion
+.input_C{
+    width: 50px;
+    @include respond-to($phone){
+        width: 35px;
+    }    
+    
 }
 
 

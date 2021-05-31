@@ -2,12 +2,18 @@ const app = Vue.createApp({
     data() {
         return {
             cart: 10,
-            qty: 0,
+            visible: false,
+            qtyK: 0,
+            qtyA: 0,
+            total: 0,
+            email:'',
+            name:'',
+            lname:'',
             selectedEvent: 0,
             related:[],
             events: [
-                { id: 0, title: 'Chivo: Soen', 'description': 'Una de las bandas de metal más legendarias de Noruega visitan nuestro país en busca de brindar un gran espectáculo, Soen los destructores del tiempo prometen dar el espectaculo de sus vidas, un espectaculo no apto para menores', category: 'música', image: './img/cards/event1.jpg', free: true, espacios: 200, atp: false, date: 'Thu, May 20, 2021, 1:00 PM CST', location: 'San José' },
-                { id: 1, title: 'Orquesta Sinfónica Nacional de Costa Rica: XI Concierto de Temporada', 'description': 'Gran conciento virtual de la Orquesta Sinfonica de Costa Rica, un evento para toda la famia. La Orquesta Sinfónica Nacional de Costa Rica (OSN) es una institución pública cultural costarricense, adscrita al Centro Nacional de Música, órgano parte del Ministerio de Cultura y Juventud de Costa Rica. Tiene su sede en la ciudad de San José. Su objetivo es la difusión de la música clásica, así como del canto coral y las artes líricas, además de encargarse de la formación instrumental en este país.', category: 'música', image: './img/cards/event2.jpg', free: false, espacios: 200, atp: true, date: 'Tue, May 18, 2021, 6:00 PM UTC', location: 'Alajuela' },
+                { id: 0, title: 'Chivo: Soen', 'description': 'Una de las bandas de metal más legendarias de Noruega visitan nuestro país en busca de brindar un gran espectáculo, Soen los destructores del tiempo prometen dar el espectaculo de sus vidas, un espectaculo no apto para menores', category: 'música', image: './img/cards/event1.jpg', free: true, espacios: 200, atp: false, date: 'Thu, May 20, 2021, 1:00 PM CST', location: 'San José', priceA: 1500 },
+                { id: 1, title: 'Orquesta Sinfónica Nacional de Costa Rica: XI Concierto de Temporada', 'description': 'Gran conciento virtual de la Orquesta Sinfonica de Costa Rica, un evento para toda la famia. La Orquesta Sinfónica Nacional de Costa Rica (OSN) es una institución pública cultural costarricense, adscrita al Centro Nacional de Música, órgano parte del Ministerio de Cultura y Juventud de Costa Rica. Tiene su sede en la ciudad de San José. Su objetivo es la difusión de la música clásica, así como del canto coral y las artes líricas, además de encargarse de la formación instrumental en este país.', category: 'música', image: './img/cards/event2.jpg', free: false, espacios: 200, atp: true, date: 'Tue, May 18, 2021, 6:00 PM UTC', location: 'Alajuela',priceA: 3000, priceK: 2000 },
                 { id: 2, title: 'Concierto con Chet Faker', 'description': 'Nicholas James Murphy (born 23 June 1988), known professionally as Chet Faker, is an Australian singer and songwriter. In 2012, as Chet Faker, he issued an extended play, Thinking in Textures, and signed to Downtown Records in the United States.', category: 'música', image: './img/cards/event3.jpg', free: false, espacios: 200, atp: true, date: 'Thu, May 20, 2021, 1:00 PM CST', location: 'San José' },
                 { id: 3, title: 'The big three: Silent theater', 'description': 'Elder Bixby is killed when a big sequoia tree is chopped down by Jims men and falls on his cabin. Jims desperate attempt to rescue Alicias father saves him from being convicted of murder. Meanwhile, timber rival Cleve Gregg (Harry Cording) appears on the scene, making it a three-way fight. Gregg and his partner Frenchy LeCroix (John Archer) try to assassinate Jim, but end up killing Yukon instead. Jim has a dramatic change of heart and leads the settlers in defeating Gregg and Frenchy. Afterwards, Jim marries Alicia and settles down.', category: 'Teatro', image: './img/cards/event4.jpg', free: true, espacios: 50, atp: true, date: 'Thu, May 20, 2021, 1:00 PM CST', location: 'San José' },
                 { id: 4, title: 'Don Quijote: en Teatro Auditorio Nacional', 'description': 'La obra, considerada una de las más famosas de la literatura universal, será dirigida por tercer año consecutivo por el reconocido director escénico Luis Carlos Vásquez y contará con la participación de un total de 20 actores.', category: 'Teatro', image: './img/cards/event5.jpg', free: false, espacios: 100, atp: true, date: 'MON, May 31, 2021, 4:00 PM CST', location: 'San José' },
@@ -57,6 +63,22 @@ const app = Vue.createApp({
                
             });
             this.related=rela;
+        },
+
+        chargeTotal(total){
+            this.total=total;
+        },
+        checkSpaces(){
+            if(this.name!=''&&this.lname!=''&&this.email!=''&&this.total!=0){
+                return false;
+            }else{
+                return true;
+            }
+        },
+        confirmSpaces(){
+            if(this.name!=''&&this.lname!=''&&this.email!=''&&this.total!=0){
+                this.visible=!this.visible;
+            }
         }
 
 

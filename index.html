@@ -15,11 +15,11 @@
 </head>
 <body>
 <div id="app" class="container-fluid">
-    <header class="header_container">
+    <header class="header_container fixed-top">
         <div class="row justify-content-center pt-4 pb-3 s-top">
             <div class="col-8 ">
                 <div class="row justify-content-between">
-                    <div class="col-sm-5">
+                    <div class="col-sm-5 ">
                         <div class="row">
                             <div class="col-5 pt-2">
                             <a href="index.html"> <img class="img-" src="./img/icon/logo.svg" alt="BookEvent"></a>
@@ -195,18 +195,20 @@
             </div>
             <div class="modal-body p-3">
                 <img class="img-fluid" v-bind:src="events[selectedEvent].image" v-bind:alt="events[selectedEvent].title">
+                <div class="p-3">
                 <p class="card-text pt-2">{{ events[selectedEvent].description }}</p>
-                <p class="card-text">Fecha y hora: {{events[selectedEvent].date}}</h5>
+                <p class="card-text ">Fecha y hora: {{events[selectedEvent].date}}</h5>
                 <p class="card-text">Lugar: {{events[selectedEvent].location}}</p>
                 <p class="card-text">Categoría: {{events[selectedEvent].category}}</p>
                 <p class="card-text">Evento gratuito: {{ showStr(events[selectedEvent].free) }}</p>
                 <p class="card-text">Apto para todo público: {{ showStr(events[selectedEvent].atp) }}</p>
                 <p>{{detectRelated(events[selectedEvent].id, events[selectedEvent].category)}}</p>
+                </div>
 
             </div>
             <div class="modal-footer">
                 
-                <button type="button" v-on:click="addToCart" class="btn btn-secondary b_details">Registrarse</button>
+                <a href="registro.html"><button type="button"  v-on:click="" class="btn btn-secondary b_details">Registrarse</button></a>
             </div>
         </div>
         <h2 class="text-center text-light pt-2 pb-2">Eventos relacionados</h2>
@@ -214,7 +216,7 @@
             
             <div class="row justify-content-center">
                     
-                <div v-for="(event, index) in related" class="col-sm-5 card m-3 ostd-card ">
+                <div v-for="(event, index) in related" class="col-sm-5 h-auto card m-3 ostd-card ">
                     <div class="row justify-content-start">
                         <div class=" card-header">
                             <img class="card-img img-fluid " v-bind:src="event.image" v-bind:alt="event.title">

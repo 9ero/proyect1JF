@@ -12,13 +12,15 @@ body {
 }
 
 .s-top {
-  width: 100%;
   background-color: #06090b;
 }
 
-.header_container {
-  width: 100%;
-  position: fixed;
+.c_top {
+  background-color: #06090b;
+}
+
+.header_containers {
+  width: 50%;
   height: auto;
 }
 
@@ -111,5 +113,21 @@ body {
 .footer_container {
   background-color: #06090b;
   color: #fff;
+}
+
+@media only screen and (max-width: 480px) {
+  .footer_container {
+    position: relative;
+  }
+}
+
+.input_C {
+  width: 50px;
+}
+
+@media only screen and (max-width: 480px) {
+  .input_C {
+    width: 35px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
