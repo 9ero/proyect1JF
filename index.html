@@ -15,23 +15,23 @@
 </head>
 <body>
 <div id="app" class="container-fluid">
-    <header class="header_container fixed-top">
-        <div class="row justify-content-center pt-4 pb-3 s-top">
-            <div class="col-8 ">
+    <header  >
+        <div class="row justify-content-center pt-4 pb-3 c_top fixed-top">
+            <div class="col-sm-8 ">
                 <div class="row justify-content-between">
-                    <div class="col-sm-5 ">
+                    <div class="col-sm-5">
                         <div class="row">
-                            <div class="col-5 pt-2">
-                            <a href="index.html"> <img class="img-" src="./img/icon/logo.svg" alt="BookEvent"></a>
+                            <div class="col-sm-5 pt-2 logo_container">
+                                <a href="index.html"> <img class="img-fluid" src="./img/icon/logo.svg" alt="BookEvent"></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="row justify-content-center pt-3 ">
-                            <div class="col">
+                            <div class="col-auto">
                                 <input class="form-control" f type="text" placeholder="Buscar">
                             </div>
-                            <div class="col ">
+                            <div class="col-auto">
                                 <button class="btn lupa_btn"> 
                                     <img class="lupa" src="./img/icon/lupa.svg" alt="Buscar" height="20">
                                 </button>
@@ -40,16 +40,11 @@
                     </div>
                 </div>
             </div>
-        </div>
-        
-                
-            
-           
-        
+        </div>   
     </header>
     <section class=" row s-outstanding pt-5 pb-5 justify-content-start ">
-       <div class="col-sm-8 pt-5">
-        <div class="row justify-content-around pt-5 m-0">
+       <div class="col-sm-8 pt-sm-5">
+        <div class="row justify-content-around pt-sm-5 m-0">
             <h3 class="text-center mb-3" id="destacado">Destacados</h3>
             <div class="col-1 d-flex align-items-center flecha_I">
                 <img class="img-fluid pr-2" src="./img/icon/flechaI.svg" alt="back" >
@@ -82,26 +77,26 @@
     </section>
     <section class="s-main">
         <div class="row justify-content-center">
-            <div class="col-2 p-2 mt-2 mr p-3  filter_container ">
-               <p>Filtros:</p>
-
-               <div class="row-cols-auto">
-                <div class="col container pt-2 pb-2 mb-3 mb-3 f_container">
-                    <p>Categoría</p>
-                    <div class="form-check container_casilla">
-                        <input type="checkbox" class="form-check-input" id="MCheck">
-                        <label class="form-check-label slash" for="MCheck">Música</label>
+            <div class="col-sm-2  mt-2  p-sm-3  filter_container ">
+                <p>Filtros:</p>
+    
+                <div class="row-cols-auto">
+                    <div class="col container pt-2 pb-2 mb-3 mb-3 f_container">
+                        <p>Categoría</p>
+                        <div class="form-check container_casilla">
+                            <input type="checkbox" class="form-check-input" id="MCheck">
+                            <label class="form-check-label slash" for="MCheck">Música</label>
+                        </div>
+                        <div class="form-check container_casilla">
+                            <input type="checkbox" class="form-check-input" id="TCheck">
+                            <label class="form-check-label slash" for="TCheck">Teatro</label>
+                        </div>
+                        <div class="form-check container_casilla">
+                            <input type="checkbox" class="form-check-input" id="CCheck">
+                            <label class="form-check-label slash" for="CCheck">Conferencia</label>
+                        </div>
+    
                     </div>
-                    <div class="form-check container_casilla">
-                        <input type="checkbox" class="form-check-input" id="TCheck">
-                        <label class="form-check-label slash" for="TCheck">Teatro</label>
-                    </div>
-                    <div class="form-check container_casilla">
-                        <input type="checkbox" class="form-check-input" id="CCheck">
-                        <label class="form-check-label slash" for="CCheck">Conferencia</label>
-                    </div>
-                
-                </div>
                     <div class="col container pt-2 pb-2 mb-3 f_container">
                         <p>Zona</p>
                         <div class="form-check container_casilla">
@@ -117,7 +112,7 @@
                             <label class="form-check-label slash" for="Resto_Check">Resto del país</label>
                         </div>
                     </div>
-                    
+    
                     <div class="col pt-2 pb-2 mb-3 container f_container">
                         <p>Apto para público</p>
                         <div class="form-check container_casilla">
@@ -126,56 +121,90 @@
                         </div>
                     </div>
                 </div>
-
+    
             </div>
-            <div class="col-6 pt-4">
+    
+            <div class="col-sm-6 pt-4">
                 <h3 class="text-center pb-4">Todos los eventos</h3>
-                <div class="row card_container justify-content-start card_container">
-                    
-                        <div v-for="(event, index) in events" class="col-sm-5 card m-3 ostd-card ">
-                            <div class="row justify-content-start">
-                                <div class=" card-header">
-                                    <img class="card-img img-fluid " v-bind:src="event.image" v-bind:alt="event.title">
-                                </div>
-                                <div class="p-4 card-body data_basic">
-                                    <h4 class="card-title  text-center">{{ event.title }}</h4>
-                                    <p class="card-text">Lugar: {{ event.location }}</p>
-                                    <p class="card-text">Fecha: {{ event.date }} </p>
-                                    <p class="card-text">Categoría: {{ event.category }} </p>
-                                    <div class="row justify-content-center">
-                                        <div class="col-3 pb-2">
-                                            <button v-on:click="showEventDetails(index)" data-bs-toggle="modal" data-bs-target="#eventModal" class="btn-secondary align-self-center b_details ">Detalles</button> 
-                                        </div>
-                                    </div>  
+                <div class="row card_container justify-content-start ">
+    
+                    <div v-for="(event, index) in events" class="col-sm-5 card m-sm-3 mb-2 ostd-card ">
+                        <div class="row justify-content-start">
+                            <div class=" card-header">
+                                <img class="card-img img-fluid " v-bind:src="event.image" v-bind:alt="event.title">
+                            </div>
+                            <div class="p-4 card-body data_basic">
+                                <h4 class="card-title  text-center">{{ event.title }}</h4>
+                                <p class="card-text">Lugar: {{ event.location }}</p>
+                                <p class="card-text">Fecha: {{ event.date }} </p>
+                                <p class="card-text">Categoría: {{ event.category }} </p>
+                                <div class="row justify-content-center">
+                                    <div class="col-3 pb-2">
+                                        <button v-on:click="showEventDetails(index)" data-bs-toggle="modal"data-bs-target="#eventModal" class="btn-secondary align-self-center b_details">
+                                            Detalles
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                       
+                    </div>
+    
                 </div>
-                
-
+    
+    
             </div>
         </div>
-
+    
     </section>
-    <footer>
-        <div class="row justify-content-sm-center footer_container pt-5 pb-5 mt-2">
-            <div class="col-8">
+    <footer >
+        <div class="row justify-content-sm-center footer_container pt-5 pb-4 mt-2">
+            <div class="col-sm-8 contac_container">
                 <div class="row justify-content-sm-evenly">
-                    <div class="col-auto">
-                        <p>Contacto</p>
+                    <div class="col-sm-auto">
+                        <h4>Contacto</h4>
                     </div>
-                    <div class="col-auto">
-                        <p>Teléfono: </p>
+                    <div class="col-sm-auto ">
+                        <div class="row justify-content-start ">
+                            <div class="col-auto">
+                                <img src="./img/icon/phone.svg" alt="Telefono" height="35">
+                            </div>
+                            <div class="col-auto">
+                                <p  class="p-2 ">+506 89563123</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-auto">
-                        <p>Email: </p>
+                    <div class="col-sm-auto">
+                        <div class="row justify-content-start">
+                            <div class="col-auto">
+                                <img src="./img/icon/mail.svg" alt="Email" height="35">
+                            </div>
+                            <div class="col-auto">
+                                <p  class="p-2 ">soporte@bookevent.com</p>
+                            </div>
+                        </div>
+                        
                     </div>
-                    <div class="col-auto">
-                        <p>Facebook</p>
+                    <div class="col-sm-auto">
+                        <div class="row justify-content-start">
+                            <div class="col-auto">
+                                <img src="./img/icon/facebook.svg" alt="Facebook" height="35">
+                            </div>
+                            <div class="col-auto">
+                                <p  class="p-2 ">facebook.com/bookevent</p>
+                            </div>
+                        </div>
+                        
                     </div>
-                    <div class="col-auto">
-                        <p>Instagram</p>
+                    <div class="col-sm-auto">
+                        <div class="row justify-content-start">
+                            <div class="col-auto">
+                                <img src="./img/icon/instagram.svg" alt="instagram" height="35">
+                            </div>
+                            <div class="col-auto">
+                                <p class="p-2 ">instagram.com/bookevent</p>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
 
