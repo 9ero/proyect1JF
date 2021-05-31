@@ -29,7 +29,7 @@
                     <div class="col-sm-4">
                         <div class="row justify-content-center pt-3 ">
                             <div class="col-auto">
-                                <label for="search" class="visually-hidden">Qty</label>
+                                <label for="search" class="color-dark visually-hidden">Qty</label>
                                 <input class="form-control" id="search" type="text" placeholder="Buscar">
                             </div>
                             <div class="col-auto">
