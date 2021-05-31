@@ -52,6 +52,7 @@ body {
 @media only screen and (max-width: 480px) {
   .s-outstanding {
     margin-left: 0px;
+    margin-top: 85px;
   }
 }
 
@@ -101,6 +102,13 @@ body {
   border-top: #06090b solid 1px;
 }
 
+@media only screen and (max-width: 480px) {
+  .s-main {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
 .container_casilla input:checked {
   background-color: #807526;
 }
@@ -110,7 +118,7 @@ body {
 }
 
 .b_details {
-  background-color: #0D0533;
+  background-color: #0d0533f8;
   color: #fff;
   border: solid black 1px;
   border-radius: 5%;
@@ -118,8 +126,8 @@ body {
 
 .b_details:hover {
   background-color: #fff;
-  border: solid #0D0533 1px;
-  color: #0D0533;
+  border: solid #0d0533f8 1px;
+  color: #0d0533f8;
 }
 
 .f_container {
@@ -173,5 +181,9 @@ body {
     margin: 0;
     padding: 0;
   }
+}
+
+.carousel_container {
+  background-color: #0d05334b;
 }
 /*# sourceMappingURL=style.css.map */
