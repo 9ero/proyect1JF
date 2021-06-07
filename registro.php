@@ -22,7 +22,7 @@
                     <div class="col-sm-5 ">
                         <div class="row">
                             <div class="col-5 pt-2 logo_container">
-                            <a href="index.html"> <img class="img-" src="./img/icon/logo.svg" alt="BookEvent"></a>
+                            <a href="index.php"> <img class="img-" src="./img/icon/logo.svg" alt="BookEvent"></a>
                             </div>
                         </div>
                     </div>

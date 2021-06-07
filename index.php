@@ -22,15 +22,14 @@
                     <div class="col-sm-5">
                         <div class="row">
                             <div class="col-sm-5 pt-2 logo_container">
-                                <a href="index.html"> <img class="img-fluid" src="./img/icon/logo.svg" alt="BookEvent"></a>
+                                <a href="index.php"> <img class="img-fluid" src="./img/icon/logo.svg" alt="BookEvent"></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="row justify-content-center pt-3 ">
                             <div class="col-auto">
-                                <label for="search" class="text-dark visually-hidden">Qty</label>
-                                <input class="form-control" id="search" type="text" placeholder="Buscar">
+                                <input class="form-control" type="text" placeholder="Buscar">
                             </div>
                             <div class="col-auto">
                                 <button class="btn lupa_btn"> 
@@ -251,7 +250,7 @@
             </div>
             <div class="modal-footer">
                 
-                <a href="registro.html"><button type="button"  v-on:click="" class="btn btn-secondary b_details">Registrarse</button></a>
+                <a href="registro.php"><button type="button"  v-on:click="" class="btn btn-secondary b_details">Registrarse</button></a>
             </div>
         </div>
         <h2 class="text-center text-light pt-2 pb-2">Eventos relacionados</h2>
